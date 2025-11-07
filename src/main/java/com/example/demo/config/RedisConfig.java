@@ -27,25 +27,11 @@ public class RedisConfig {
         redisStandaloneConfiguration.setPassword("12345678");
         redisStandaloneConfiguration.setPort(redisPort);
 
-        JedisPoolConfig p = new JedisPoolConfig();
-        p.setMinEvictableIdleTime(Duration.ofMillis(60000));
-        p.setTimeBetweenEvictionRuns(Duration.ofMillis(30000));
-
-        JedisClientConfiguration.JedisClientConfigurationBuilder  jedisClientConfiguration = JedisClientConfiguration.builder();
-        jedisClientConfiguration.usePooling().poolConfig(p);
-        jedisClientConfiguration.connectTimeout(Duration.ofMillis(60000));
-        jedisClientConfiguration.readTimeout(Duration.ofMillis(60000));
-        return new JedisConnectionFactory(redisStandaloneConfiguration, jedisClientConfiguration.build());
+       return null;
     }
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate() {
-        RedisTemplate<String, Object> template = new RedisTemplate<>();
-        template.setKeySerializer(new StringRedisSerializer());
-        template.setHashKeySerializer(new StringRedisSerializer());
-        template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
-        template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-        template.setConnectionFactory(redisConnectionFactory());
-        return template;
+        return null;
     }
 }
