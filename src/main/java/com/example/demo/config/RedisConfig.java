@@ -28,7 +28,6 @@ public class RedisConfig {
         redisStandaloneConfiguration.setPort(redisPort);
 
         JedisPoolConfig p = new JedisPoolConfig();
-        p.setTestWhileIdle(true);
         p.setMinEvictableIdleTime(Duration.ofMillis(60000));
         p.setTimeBetweenEvictionRuns(Duration.ofMillis(30000));
 
