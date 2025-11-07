@@ -32,10 +32,6 @@ public class RedisConfig {
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate() {
-        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
-        redisStandaloneConfiguration.setHostName(redisHost);
-        redisStandaloneConfiguration.setPassword("12345678");
-        redisStandaloneConfiguration.setPort(redisPort);
         return null;
     }
 }
